@@ -2,9 +2,8 @@
   "name": "pharmacie_api",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-  "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "Wilfried Nguenang",
@@ -13,6 +12,7 @@
   "dependencies": {
     "express": "^5.1.0",
     "mysql2": "^3.15.0",
+    "nodemon": "^3.1.10",
     "sequelize": "^6.37.7"
   }
 }
