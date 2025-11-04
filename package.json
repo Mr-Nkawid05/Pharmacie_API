@@ -3,16 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-Nkawid05/Pharmacie_APi.git"
   },
   "keywords": [],
   "author": "Wilfried Nguenang",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-Nkawid05/Pharmacie_APi/issues"
+  },
+  "homepage": "https://github.com/Mr-Nkawid05/Pharmacie_APi#readme",
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
-    "mysql2": "^3.15.0",
-    "nodemon": "^3.1.10",
-    "sequelize": "^6.37.7"
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
