@@ -21,4 +21,7 @@ const PharmacieSchema = new mongoose.Schema({
 
 PharmacieSchema.index({ localisation: '2dsphere' });
 
-module.exports = mongoose.model('Pharmacie', PharmacieSchema);
+
+const Pharmacie = mongoose.model("Pharmacie", PharmacieSchema);
+
+module.exports = Pharmacie;
