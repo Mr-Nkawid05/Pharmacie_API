@@ -10,12 +10,35 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Pharmacie API server Updated!");
 });
 
+
+app.get("/api/pharmacies", async (req, res) => {
+  try {
+    const pharmacies = await Pharmacie.find();
+    res.status(200).json(pharmacies);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/api/pharmacie/:id", async (req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ message: error.message }); 
+  }
+});
+
 app.post("/api/pharmacie", async (req, res) => {
   try {
-      const pharmacie = await Pharmacie.create();
-      res.status(200).json(Pharmacie);
+    const existe = await Pharmacie.findOne({ email: req.body.email });
+    if (existe) {
+      return res.status(400).json({ message: "Cet email est déjà utilisé." });
+    }
+
+    const pharmacie = await Pharmacie.create(req.body);
+    res.status(201).json(pharmacie);
   } catch (error) {
-      res.status(500).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 });
 
